@@ -1,10 +1,10 @@
-package com.github.tigeorge.webpagestat.view;
+package com.github.tigeorge.webpagesstat.view;
 
 import java.util.Scanner;
 
 public class ConsoleView {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    static final Scanner scanner = new Scanner(System.in);
 
     public static void writeMessage(String message) {
         System.out.println(message);
@@ -13,4 +13,6 @@ public class ConsoleView {
     public static String readString() {
         return scanner.nextLine();
     }
+
+
 }
