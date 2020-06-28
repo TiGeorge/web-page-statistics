@@ -3,6 +3,9 @@ package com.github.tigeorge.webpagesstat.model;
 import javax.persistence.*;
 import java.util.Map;
 
+/*
+* Хранит информацию о статистике подсчета слов на странице.
+*/
 @Entity
 @Table(name = "word_statistics")
 public class WordsStatistics {

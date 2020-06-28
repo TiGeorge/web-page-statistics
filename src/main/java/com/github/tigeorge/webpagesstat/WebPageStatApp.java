@@ -19,8 +19,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /*
-* Основной класс приложения
-*/
+ * Основной класс приложения
+ */
 public class WebPageStatApp {
 
     private static final Logger logger = Logger.getLogger(WebPageStatApp.class.getName());
@@ -83,6 +83,5 @@ public class WebPageStatApp {
         }
 
         HibernateUtil.shutdown();
-
     }
 }

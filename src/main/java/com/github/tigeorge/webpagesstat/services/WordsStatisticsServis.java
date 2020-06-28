@@ -8,8 +8,14 @@ import org.hibernate.query.Query;
 import java.sql.SQLException;
 import java.util.List;
 
+/*
+ * Реализация CRUD-операций для класса WordsStatistics
+ */
 public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStatistics> {
 
+    /*
+     * Сохраняет объект в БД
+     */
     @Override
     public void save(WordsStatistics wordsStatistics) throws SQLException {
 
@@ -21,6 +27,9 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
         closeTransactionSession();
     }
 
+    /*
+     * Получает из БД список всех объектов
+     */
     @Override
     public List<WordsStatistics> getAll() throws SQLException {
 
@@ -37,6 +46,9 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
         return wordsStatisticsList;
     }
 
+    /*
+     * получает объект по ID
+     */
     @Override
     public WordsStatistics get(long id) throws SQLException {
 
@@ -55,6 +67,9 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
         return wordsStatistics;
     }
 
+    /*
+     * Обновляет объект в БД
+     */
     @Override
     public void update(WordsStatistics wordsStatistics) throws SQLException {
         openTransactionSession();
@@ -65,6 +80,9 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
         closeTransactionSession();
     }
 
+    /*
+     * Удаляет объект из БД
+     */
     @Override
     public void delete(WordsStatistics wordsStatistics) throws SQLException {
         openTransactionSession();

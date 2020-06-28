@@ -8,8 +8,14 @@ import org.hibernate.query.Query;
 import java.sql.SQLException;
 import java.util.List;
 
+/*
+* Реализация CRUD-операций для класса WebPage
+*/
 public class WebPageService extends SessionUtil implements Dao<WebPage> {
 
+    /*
+    * Сохраняет объект в БД
+    */
     @Override
     public void save(WebPage webPage) throws SQLException {
 
@@ -21,6 +27,9 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
         closeTransactionSession();
     }
 
+    /*
+    * Получает из БД список всех объектов
+    */
     @Override
     public List<WebPage> getAll() throws SQLException {
 
@@ -37,6 +46,9 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
         return webPageList;
     }
 
+    /*
+    * получает объект по ID
+    */
     @Override
     public WebPage get(long id) throws SQLException {
 
@@ -55,6 +67,9 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
         return webPage;
     }
 
+    /*
+    * Обновляет объект в БД
+    */
     @Override
     public void update(WebPage webPage) throws SQLException {
         openTransactionSession();
@@ -65,6 +80,9 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
         closeTransactionSession();
     }
 
+    /*
+    * Удаляет объект из БД
+    */
     @Override
     public void delete(WebPage webPage) throws SQLException {
         openTransactionSession();

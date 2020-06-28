@@ -2,6 +2,9 @@ package com.github.tigeorge.webpagesstat.model;
 
 import javax.persistence.*;
 
+/*
+* Содержит информацию о веб-странице, сохраняется в БД
+*/
 @Entity
 @Table(name = "web_page")
 public class WebPage {
