@@ -14,15 +14,15 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 /*
-* Класс содержит методы основных функций приложения
+* Contains methods of the main functions of the application
 */
 public class PageController {
 
     private static final Logger logger = Logger.getLogger(PageController.class.getName());
 
     /*
-    * Запрашивает у пользователя URL веб-страницы.
-    * Если URL введен некорретно, предлагает повторить ввод.
+    * Asks the user for the URL of the web page.
+    * If the URL is entered incorrectly, offers to repeat the entry.
     */
     public URL readUrl() {
 
@@ -50,7 +50,7 @@ public class PageController {
     }
 
     /*
-    * Сохраняет заданную веб-страницу в указанный файл
+    * Saves the specified web page to the specified file
     */
     public File downloadPage(URL url, String fileName) throws IOException {
 
@@ -72,7 +72,7 @@ public class PageController {
     }
 
     /*
-    * Подсчитывает слова в переданном потоке. Возвращает карту результатов.
+    * Counts the words in the transmitted stream. Returns a map of results.
     */
     public Map<String, Integer> countWords(InputStream input, String baseUri) throws IOException {
 

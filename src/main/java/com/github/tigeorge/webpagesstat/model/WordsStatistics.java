@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Map;
 
 /*
-* Хранит информацию о статистике подсчета слов на странице.
+* Stores information about word count statistics on a page.
 */
 @Entity
 @Table(name = "word_statistics")

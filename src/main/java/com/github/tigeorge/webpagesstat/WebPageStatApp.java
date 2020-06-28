@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /*
- * Основной класс приложения
+ * Application Main Class
  */
 public class WebPageStatApp {
 
@@ -32,50 +32,50 @@ public class WebPageStatApp {
         WebPageService webPageService = new WebPageService();
         WordsStatisticsServis wordsStatisticsServis = new WordsStatisticsServis();
 
-        // Запрашиваем у пользователя URL
+        // User URL request
         URL url = controller.readUrl();
 
         if (url == null) {
-            // если корректный URL не введен, завершаем выполнение.
+            // If the correct URL is not entered, complete the execution.
             ConsoleView.writeMessage("URL not entered.");
             logger.log(Level.INFO, "URL not entered.");
             return;
         }
 
-        // Создаем объект веб-страницы для последующего сохранения в БД
+        // Creating a web page object for saving to the database
         WebPage webPage = new WebPage(url.toString());
 
         try {
-            // Сохраняем веб-страницу в БД
+            // Save web page to database
             webPageService.save(webPage);
         } catch (SQLException e) {
             logger.log(Level.SEVERE, "Cannot save web page to DB", e);
         }
 
-        // Создаем файл в корне проекта
+        // Create a file in the root of the project
         String fileName = "page" + webPage.getId() + ".html";
 
         try {
 
-            // Скачиваем веб-страницу в указанный файл
+            // Download the web page to the specified file
             File file = controller.downloadPage(url, fileName);
 
-            // Обновляем веб-страницу в БД, добавляя информацию о скачанном файлу
+            // Updating a web page in the database, adding information about the downloaded file
             webPage.setFileName(fileName);
             webPageService.update(webPage);
 
-            // Получаем результат подсчета слов в файле
+            // Getting the result of counting words in a file
             InputStream inputStream = new FileInputStream(file);
             Map<String, Integer> statistics = controller.countWords(inputStream, url.toString());
 
-            // Создаем объект WordsStatistics для сохранения результата посчета слов в БД
+            // Creating a WordsStatistics object to save the word count result in the database
             WordsStatistics wordsStatistics = new WordsStatistics(webPage);
             wordsStatistics.setStatistics(statistics);
 
-            // Сохраняем результат в БД
+            // Saving the result to the database
             wordsStatisticsServis.save(wordsStatistics);
 
-            // Выводим результат в консоль
+            // Output to console
             statistics.forEach((k, v) -> ConsoleView.writeMessage(k + " - " + v));
 
         } catch (IOException | SQLException e) {

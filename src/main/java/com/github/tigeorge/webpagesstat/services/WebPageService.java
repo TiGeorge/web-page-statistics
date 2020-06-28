@@ -9,12 +9,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 /*
-* Реализация CRUD-операций для класса WebPage
+* Implementing CRUD Operations for the WebPage Class
 */
 public class WebPageService extends SessionUtil implements Dao<WebPage> {
 
     /*
-    * Сохраняет объект в БД
+    * Saves an object to the database
     */
     @Override
     public void save(WebPage webPage) throws SQLException {
@@ -28,7 +28,7 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
     }
 
     /*
-    * Получает из БД список всех объектов
+    * Gets a list of all objects from the database
     */
     @Override
     public List<WebPage> getAll() throws SQLException {
@@ -47,7 +47,7 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
     }
 
     /*
-    * получает объект по ID
+    * Gets an object by ID
     */
     @Override
     public WebPage get(long id) throws SQLException {
@@ -68,7 +68,7 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
     }
 
     /*
-    * Обновляет объект в БД
+    * Updates an object in the database
     */
     @Override
     public void update(WebPage webPage) throws SQLException {
@@ -81,7 +81,7 @@ public class WebPageService extends SessionUtil implements Dao<WebPage> {
     }
 
     /*
-    * Удаляет объект из БД
+    * Deletes an object from the database
     */
     @Override
     public void delete(WebPage webPage) throws SQLException {

@@ -3,7 +3,7 @@ package com.github.tigeorge.webpagesstat.model;
 import javax.persistence.*;
 
 /*
-* Содержит информацию о веб-странице, сохраняется в БД
+* Contains information about the web page, stored in the database
 */
 @Entity
 @Table(name = "web_page")

@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /*
-* Интерфейс CRUD операций над БД
+* CRUD Database Operations Interface
 */
 public interface Dao<T> {
 

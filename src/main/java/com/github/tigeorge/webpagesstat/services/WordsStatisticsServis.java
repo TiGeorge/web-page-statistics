@@ -14,7 +14,7 @@ import java.util.List;
 public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStatistics> {
 
     /*
-     * Сохраняет объект в БД
+     * Saves an object to the database
      */
     @Override
     public void save(WordsStatistics wordsStatistics) throws SQLException {
@@ -28,7 +28,7 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
     }
 
     /*
-     * Получает из БД список всех объектов
+     * Gets a list of all objects from the database
      */
     @Override
     public List<WordsStatistics> getAll() throws SQLException {
@@ -47,7 +47,7 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
     }
 
     /*
-     * получает объект по ID
+     * Gets an object by ID
      */
     @Override
     public WordsStatistics get(long id) throws SQLException {
@@ -68,7 +68,7 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
     }
 
     /*
-     * Обновляет объект в БД
+     * Updates an object in the database
      */
     @Override
     public void update(WordsStatistics wordsStatistics) throws SQLException {
@@ -81,7 +81,7 @@ public class WordsStatisticsServis extends SessionUtil implements Dao<WordsStati
     }
 
     /*
-     * Удаляет объект из БД
+     * Deletes an object from the database
      */
     @Override
     public void delete(WordsStatistics wordsStatistics) throws SQLException {
